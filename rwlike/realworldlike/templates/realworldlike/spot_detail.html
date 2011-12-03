@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Spot #{{ spot.pk }}</h1>
+    <ul>
+        <li>Sender: {{ spot.sender }}</li>
+        <li>Content: {{ spot.content }}</li>
+        <li>inNumber: {{ spot.inNumber }}</li>
+        <li>email: {{ spot.email }}</li>
+    </ul>
+{% endblock %}
