@@ -13,7 +13,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'rwlike',                      # Or path to database file if using sqlite3.
         'USER': 'rwlike',                      # Not used with sqlite3.
         'PASSWORD': 'rwlike',                  # Not used with sqlite3.
@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     'realworldlike',
     'south',
     'crispy_forms',
+    'gunicorn',
 )
 
 # A sample logging configuration. The only tangible logging
