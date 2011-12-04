@@ -23,15 +23,11 @@ class PrintRunJSONView(BaseDetailView):
         if not poster_ids:
             raise http.Http404
         payload = {
-            'qr': {
-                'left': print_run.design.qr_left,
-                'top': print_run.design.qr_top,
-                'size': print_run.design.qr_size,
-            },
-            'campaign': {
-                'number': print_run.design.campaign.number,
-                'keyword': print_run.design.campaign.keyword,
-            },
+            'qr_left': print_run.design.qr_left,
+            'qr_top': print_run.design.qr_top,
+            'qr_size': print_run.design.qr_size,
+            'campaign_number': print_run.design.campaign.number,
+            'campaign_keyword': print_run.design.campaign.keyword,
             'poster_ids': poster_ids,
         }
         return self.get_json_response(self.convert_payload_to_json(payload))
