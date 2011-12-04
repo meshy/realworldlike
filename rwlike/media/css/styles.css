@@ -1,0 +1,48 @@
+body {
+    background-color: #CCF;
+}
+
+#container {
+    width:980px;
+    margin: 0 auto;
+    text-align: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    font-family: 'Droid Sans', 'Trebuchet MS', sans-serif;
+}
+
+#mainContent {
+    background-color: white;
+}
+
+#text {
+    width: 810px;
+}
+
+#header {
+    background-color: white;
+    text-align: center;
+}
+
+#footer {
+    clear: both;
+    padding-top: 20px;
+    background-color: #008EBC;
+    color: #FFC;
+    text-align: right;
+    margin-top: 20px;
+    padding-right:20px;
+    padding-bottom: 20px;
+}
+
+#footer a {
+    color: #FFC;
+}
+
+td.label {
+    font-weight: bold;
+}
+
+td.important {
+    color: red;
+}

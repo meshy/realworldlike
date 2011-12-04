@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
     <head>
-        <title></title>
+        <meta charset="utf-8">
+        <title>{% block title %}Real World Likes{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
         {% block extra_head %}{% endblock %}
     </head>
-    <body>
-        <h1>Real World Likes</h1>
-        {% block content %}
-        {% endblock content %}
+
+    <body class="oneColElsCtrHdr">
+        <div id="container">
+            <div id="header">
+                {% block header %}
+                    <h1>Real-World "Likes"</h1>
+                    <p>Created at RHOK Oxford 2011</p>
+                {% endblock %}
+            </div>
+            <div id="mainContent">
+                {% block content %}
+                    <p>Content</p>
+                {% endblock content %}
+            </div>
+            <div id="footer">
+                {% block footer %}
+                    <p>Open Source</p>
+                {% endblock footer %}
+            </div>
+        </div>
     </body>
 </html>
