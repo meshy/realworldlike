@@ -4,3 +4,5 @@ django-crispy-forms==1.0
 south
 gunicorn
 psycopg
+django-extensions
+Werkzeug

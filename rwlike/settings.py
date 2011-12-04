@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'south',
     'crispy_forms',
     'gunicorn',
+    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging
