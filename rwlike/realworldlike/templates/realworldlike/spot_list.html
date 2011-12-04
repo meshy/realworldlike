@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Spots</h2>
+    <ul>
+        {% for spot in spots %}
+        <li><a href="{% url spot_detail spot.pk %}">Spot {{ spot.pk }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

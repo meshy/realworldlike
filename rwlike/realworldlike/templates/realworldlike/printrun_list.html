@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Print-runs</h2>
+    <ul>
+        {% for pr in printruns %}
+        <li><a href="{% url printrun_json pr.pk %}">Print-run {{ pr.pk }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
