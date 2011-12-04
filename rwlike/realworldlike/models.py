@@ -45,6 +45,7 @@ class Spot(models.Model):
     inNumber = models.CharField(max_length=255)
     sender = models.CharField(max_length=255, blank=True, null=True)
     email = models.CharField(max_length=255, blank=True, null=True)
+    credits = models.CharField(max_length=255, blank=True, null=True)
 
     def __unicode__(self):
         return self.content + ' from ' + self.inNumber
