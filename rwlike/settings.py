@@ -111,6 +111,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'request.middleware.RequestMiddleware',
 )
 
 ROOT_URLCONF = 'rwlike.urls'
@@ -136,6 +137,7 @@ INSTALLED_APPS = (
     'crispy_forms',
     'gunicorn',
     'django_extensions',
+    'request'
 )
 
 # A sample logging configuration. The only tangible logging

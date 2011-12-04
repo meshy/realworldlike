@@ -6,3 +6,4 @@ gunicorn
 psycopg
 django-extensions
 Werkzeug
+django-request
