@@ -4,7 +4,7 @@ from django.utils import simplejson as json
 from django.views.generic.detail import BaseDetailView
 from django.views.generic import CreateView
 
-from realworldlike.models import PrintRun, Spot
+from realworldlike.models import Poster, PrintRun, Spot
 from realworldlike.forms import PrintRunForm, SpotForm
 
 
@@ -12,6 +12,12 @@ from realworldlike.forms import PrintRunForm, SpotForm
 class PrintRunCreateView(CreateView):
     form_class = PrintRunForm
     model = PrintRun
+
+    def form_valid(self, form):
+        for i in xrange(form.cleaned_data['quantity']):
+            Poster()
+
+        return super(PrintRunCreateView, self).form_valid()
 
 
 class PrintRunJSONView(BaseDetailView):
@@ -23,11 +29,15 @@ class PrintRunJSONView(BaseDetailView):
         if not poster_ids:
             raise http.Http404
         payload = {
-            'qr_left': print_run.design.qr_left,
-            'qr_top': print_run.design.qr_top,
-            'qr_size': print_run.design.qr_size,
-            'campaign_number': print_run.design.campaign.number,
-            'campaign_keyword': print_run.design.campaign.keyword,
+            'qr': {
+                'left': print_run.design.qr_left,
+                'top': print_run.design.qr_top,
+                'size': print_run.design.qr_size,
+            },
+            'campaign': {
+                'number': print_run.design.campaign.number,
+                'keyword': print_run.design.campaign.keyword,
+                },
             'poster_ids': poster_ids,
         }
         return self.get_json_response(self.convert_payload_to_json(payload))
