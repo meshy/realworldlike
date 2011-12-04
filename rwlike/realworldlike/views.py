@@ -14,10 +14,13 @@ class PrintRunCreateView(CreateView):
     model = PrintRun
 
     def form_valid(self, form):
-        for i in xrange(form.cleaned_data['quantity']):
-            Poster()
+        response = super(PrintRunCreateView, self).form_valid(form)
 
-        return super(PrintRunCreateView, self).form_valid()
+        quantity = int(form.cleaned_data['quantity'])
+        for i in xrange(quantity):
+            Poster(printrun=self.object).save()
+
+        return response
 
 
 class PrintRunJSONView(BaseDetailView):

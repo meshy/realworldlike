@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
+{% block extra_head %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}uni_form/uni-form.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}uni_form/default.uni-form.css" type="text/css" />
+{% endblock %}
+
 {% block content %}
-    <form method="POST" action="#">{% csrf_token %}
+    <form class="uniForm" method="POST" action="#">{% csrf_token %}
         {{ form|crispy }}
         <input type="submit" value="Submit">
     </form>
