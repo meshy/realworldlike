@@ -21,7 +21,7 @@ class PrintRunJSONView(BaseDetailView):
         print_run = self.object
         poster_ids = list(print_run.poster_set.all().values_list('pk', flat=True))
         if not poster_ids:
-            raise Http404
+            raise http.Http404
         payload = {
             'qr': {
                 'left': print_run.design.qr_left,
